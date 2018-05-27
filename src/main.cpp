@@ -4,24 +4,16 @@
  *  Created on: 24 maj 2018
  * 	Author: christian ryding
  */
-#include <future>
-#include <thread>
+
 #include <iostream>
-#include "../include/ParseEvents.h"
+#include "../include/GetFutures.h"
 #include "../include/WriteDataToFiles.h"
 
-
-/**
-	*
- 	*/
 std::vector<Event> startParsing(std::string filename);
 std::vector<UniqueTeam> startGettingUniqueNames(std::vector<Event> eventVec);
 
-
 /**
- 	*
  	*	main
- 	*
  	*/
 int main(){
 
@@ -29,7 +21,6 @@ int main(){
 	//ParseEvents pe;
 	//vector<Event> eventVec = pe.parseCsvFiles("../CSVs/Pinnacle2016_1.dsv");
 	//vector<UniqueTeam> uniqueTeamsVec = pe.getUniqueTeams(eventVec);
-
 
 	// parse CSV files
   std::future<std::vector<Event>> futEventVec1 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2016_1.dsv");
