@@ -29,7 +29,7 @@ std::vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
 	std::vector<Event> eventsVec;
 	std::string line;
 	int counter = 0;
-
+	
 	for(std::string line; std::getline( input, line );){
 		std::stringstream linestream(line);
 		std::string value;
