@@ -6,14 +6,16 @@
  */
 #include <future>
 #include <thread>
+#include <iostream>
 #include "../include/ParseEvents.h"
 #include "../include/WriteDataToFiles.h"
+
 
 /**
 	*
  	*/
-vector<Event> startParsing(std::string filename);
-vector<UniqueTeam> startGettingUniqueNames(vector<Event> eventVec);
+std::vector<Event> startParsing(std::string filename);
+std::vector<UniqueTeam> startGettingUniqueNames(std::vector<Event> eventVec);
 
 
 /**
@@ -30,11 +32,11 @@ int main(){
 
 
 	// parse CSV files
-  std::future<vector<Event>> futEventVec1 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2016_1.dsv");
-  std::future<vector<Event>> futEventVec2 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2016_2.dsv");
-  std::future<vector<Event>> futEventVec3 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2017_1.dsv");
-  std::future<vector<Event>> futEventVec4 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2017_2.dsv");
-  std::future<vector<Event>> futEventVec5 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2018_1.dsv");
+  std::future<std::vector<Event>> futEventVec1 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2016_1.dsv");
+  std::future<std::vector<Event>> futEventVec2 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2016_2.dsv");
+  std::future<std::vector<Event>> futEventVec3 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2017_1.dsv");
+  std::future<std::vector<Event>> futEventVec4 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2017_2.dsv");
+  std::future<std::vector<Event>> futEventVec5 = std::async(std::launch::async, startParsing, "../CSVs/Pinnacle2018_1.dsv");
 
 	// get parsed CSV files
 	std::vector<std::vector<Event>> allFotballEventsVec;
@@ -46,7 +48,7 @@ int main(){
 
 
 	for( int i = 0; i < allFotballEventsVec.size(); i++){
-		  cout << "Size " << i << ": " << allFotballEventsVec.at(i).size() << endl;
+		  std::cout << "Size " << i << ": " << allFotballEventsVec.at(i).size() << std::endl;
 	}
 
 
@@ -67,17 +69,17 @@ int main(){
 /**
  *
  */
-vector<Event> startParsing(std::string filename){
+std::vector<Event> startParsing(std::string filename){
 	ParseEvents pe;
-	vector<Event> eventVec = pe.parseCsvFiles(filename);
+	std::vector<Event> eventVec = pe.parseCsvFiles(filename);
 	return eventVec;
 }
 
 /**
  *
  */
-vector<UniqueTeam> startGettingUniqueNames(vector<Event> eventVec){
+std::vector<UniqueTeam> startGettingUniqueNames(std::vector<Event> eventVec){
 	ParseEvents pe;
-	vector<UniqueTeam> uniqueTeamsVec = pe.getUniqueTeams(eventVec);
+	std::vector<UniqueTeam> uniqueTeamsVec = pe.getUniqueTeams(eventVec);
 	return uniqueTeamsVec;
 }

@@ -23,10 +23,10 @@ ParseEvents::~ParseEvents() { 	}
 /**
  * Parse CSV files and return soccer events in a vector<Event> that are unique
  */
-vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
+std::vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
 
-	ifstream input(csvFilename);
-	vector<Event> eventsVec;
+	std::ifstream input(csvFilename);
+	std::vector<Event> eventsVec;
 	std::string line;
 	int counter = 0;
 
@@ -69,7 +69,7 @@ vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
 					event.setSport(value);
 					break;
 				case 17:
-					replace(value.begin(), value.end(), ',', '.');
+					std::replace(value.begin(), value.end(), ',', '.');
 					event.setHomeOdds(atof(value.c_str()));
 					break;
 				case 18:
@@ -110,7 +110,7 @@ vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
  * Returns false if event already been pushed to vector, true if not
  *
  */
-bool ParseEvents::checkIfEventExist(Event event, vector<Event> events){
+bool ParseEvents::checkIfEventExist(Event event, std::vector<Event> events){
 
 	if(events.size() < 1){
 		return true;
@@ -146,9 +146,9 @@ bool ParseEvents::checkIfFotballEvent(int sportID){
  * Check if teamID exist, if not add it
  *
  */
-vector<UniqueTeam> ParseEvents::getUniqueTeams(vector<Event> eventsVec){
+std::vector<UniqueTeam> ParseEvents::getUniqueTeams(std::vector<Event> eventsVec){
 
-	vector<UniqueTeam> uniqueVec;
+	std::vector<UniqueTeam> uniqueVec;
 
 	for(Event e: eventsVec){
 		if(!existInArray(e.getHomeID(), uniqueVec) ){
@@ -169,7 +169,7 @@ vector<UniqueTeam> ParseEvents::getUniqueTeams(vector<Event> eventsVec){
 /**
  *	Check if we already added teamname/teamID to vector
  */
-bool ParseEvents::existInArray(int id, vector<UniqueTeam> uniqueTeam){
+bool ParseEvents::existInArray(int id, std::vector<UniqueTeam> uniqueTeam){
 
 	for(UniqueTeam u: uniqueTeam){
 		if(id ==  u.getTeamID()){

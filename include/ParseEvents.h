@@ -8,7 +8,6 @@
 #ifndef HEADERS_PARSEEVENTS_H_
 #define HEADERS_PARSEEVENTS_H_
 
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -18,19 +17,18 @@
 #include "Event.h"
 #include "UniqueTeam.h"
 
-using namespace std;
-
 class ParseEvents {
+	private:
+		bool checkIfEventExist(Event event, std::vector<Event> events);
+		bool checkIfFotballEvent(int sportID);
+
+		bool existInArray(int id, std::vector<UniqueTeam> uniqueTeam);
 
 	public:
 		ParseEvents();
 		~ParseEvents();
-
-		vector<Event> parseCsvFiles(std::string csvFilename);
-		bool checkIfEventExist(Event event, vector<Event> events);
-		bool checkIfFotballEvent(int sportID);
-		vector<UniqueTeam> getUniqueTeams(vector<Event> eventsVec);
-		bool existInArray(int id, vector<UniqueTeam> uniqueTeam);
+		std::vector<Event> parseCsvFiles(std::string csvFilename);
+		std::vector<UniqueTeam> getUniqueTeams(std::vector<Event> eventsVec);
 };
 
 #endif /* HEADERS_PARSEEVENTS_H_ */
