@@ -111,7 +111,7 @@ std::vector<Event> ParseEvents::parseCsvFiles(std::string csvFilename){
  *
  */
 bool ParseEvents::checkIfEventExist(Event event, std::vector<Event> events){
-
+  
 	if(events.size() < 1){
 		return true;
 	}
