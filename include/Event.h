@@ -1,8 +1,8 @@
 /*
- * 	Event.h
+ * Event.h
  *
- *  Created on: 24 maj 2018
- *  Author: christian ryding
+ * Created on: 24 maj 2018
+ * Author: christian ryding
  */
 #ifndef HEADERS_EVENT_H_
 #define HEADERS_EVENT_H_
