@@ -1,3 +1,5 @@
+
+
 /*
  * BettingModels.h
  *
@@ -8,7 +10,8 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <Event.h>
+#include "Event.h"
+
 class BettingModels{
 
  private:

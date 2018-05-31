@@ -1,8 +1,8 @@
 /*
- * 	ParseEvents.h
+ * ParseEvents.h
  *
- *  Created on: 25 maj 2018
- *  Author: christian ryding
+ * Created on: 25 maj 2018
+ * Author: christian ryding
  */
 
 #ifndef HEADERS_PARSEEVENTS_H_
@@ -13,7 +13,6 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
-
 #include "Event.h"
 #include "UniqueTeam.h"
 

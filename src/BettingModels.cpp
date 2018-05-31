@@ -6,7 +6,6 @@
  */
 #include "BettingModels.h"
 
-
 // constructor
 BettingModels::BettingModels(){
   sum = 10000;//default
