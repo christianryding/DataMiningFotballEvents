@@ -1,5 +1,3 @@
-
-
 /*
  * BettingModels.h
  *
@@ -10,6 +8,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <random>
 #include "Event.h"
 
 class BettingModels{
@@ -29,4 +28,5 @@ class BettingModels{
   void betDrawEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
   void betHomeTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
   void betAwayTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
+  void betOnRandom(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
 };

@@ -40,6 +40,7 @@ int main(){
   bettingModels.betDrawEveryTime(10, allFotballEventsVec);
   bettingModels.betHomeTeamEveryTime(10, allFotballEventsVec);
   bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
 }
 
 
