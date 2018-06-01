@@ -4,6 +4,10 @@
  * Created on: 28 maj 2018
  * Author: christian ryding
  */
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <random>
 #include "BettingModels.h"
 
 // constructor
@@ -163,7 +167,7 @@ void BettingModels::betOnRandom(double bettingSum, std::vector<std::vector<Event
 	}
 	break;	
       default:
-	std::cout << "Random = " << new_number << std::endl;
+	std::cout << "Wrong random range, rand = " << new_number << std::endl;
 	break;
       }
       betCounter++;

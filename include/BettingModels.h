@@ -5,10 +5,6 @@
  * Author: christian ryding
  */
 #include <vector>
-#include <iostream>
-#include <sstream>
-#include <fstream>
-#include <random>
 #include "Event.h"
 
 class BettingModels{

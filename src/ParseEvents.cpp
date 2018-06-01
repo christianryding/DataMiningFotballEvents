@@ -4,7 +4,10 @@
  * Created on: 25 maj 2018
  * Author: christian ryding
  */
-#include "../include/ParseEvents.h"
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include "ParseEvents.h"
 
 /**
  * Constructor

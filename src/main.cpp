@@ -4,8 +4,8 @@
  * Created on: 24 maj 2018
  * Author: christian ryding
  */
-#include "../include/BettingModels.h"
-#include "../include/ParseEvents.h"
+#include "BettingModels.h"
+#include "ParseEvents.h"
 #include <future>
 #include <thread>
 
@@ -37,10 +37,19 @@ int main(){
 
   // run the different models
   BettingModels bettingModels(10000);
-  bettingModels.betDrawEveryTime(10, allFotballEventsVec);
   bettingModels.betHomeTeamEveryTime(10, allFotballEventsVec);
+  bettingModels.betDrawEveryTime(10, allFotballEventsVec);
   bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
+  
   bettingModels.betOnRandom(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
+  bettingModels.betOnRandom(10, allFotballEventsVec);
+
+
+  
 }
 
 
