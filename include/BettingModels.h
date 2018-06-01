@@ -4,6 +4,9 @@
  * Created on: 24 maj 2018
  * Author: christian ryding
  */
+#ifndef HEADERS_BETTINGMODELS_H_
+#define HEADERS_BETTINGMODELS_H_
+
 #include <vector>
 #include "Event.h"
 
@@ -26,3 +29,5 @@ class BettingModels{
   void betAwayTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
   void betOnRandom(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
 };
+
+#endif /* HEADERS_BETTINGMODELS_H_ */

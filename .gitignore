@@ -1,3 +1,5 @@
 build/*
-cmakeCommand
+GPATH
+GRTAGS
+GTAGS
 

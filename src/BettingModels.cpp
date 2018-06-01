@@ -132,11 +132,16 @@ void BettingModels::betOnRandom(double bettingSum, std::vector<std::vector<Event
   std::cout << std::endl << "Bet on random team every time" << std::endl;
   std::cout << "Starting sum: " << sum << std::endl;
 
+  
+  std::random_device device;
+  std::mt19937 generator(device());
+  std::uniform_int_distribution<int> distribution(1,3);
+  
   for( int i = 0; i < allFotballEventsVec.size(); i++){
     for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
 
       // get random
-      const int new_number = (rand() % (maxNr + 1 - minNr)) + minNr;
+      const int new_number = distribution(generator); 
       
       switch(new_number){
       case 1:// if hometeam won, add winnings to sum, else withdraw
