@@ -1,3 +1,4 @@
+
 /*
  * BettingModels.cpp
  *
@@ -66,7 +67,7 @@ void BettingModels::betHomeTeamEveryTime(double bettingSum, std::vector<std::vec
   int betCounter = 0;
   int homeTeamCounter = 0;
 
-  std::cout << std::endl << "Bet on home team every time" << std::endl;
+  std::cout << std::endl << "\nBet on home team every time" << std::endl;
   std::cout << "Starting sum: " << sum << std::endl;
   
   for( int i = 0; i < allFotballEventsVec.size(); i++){
@@ -121,17 +122,18 @@ void BettingModels::betAwayTeamEveryTime(double bettingSum, std::vector<std::vec
 }
 
 // bet on random team every time
-void BettingModels::betOnRandom(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+std::string BettingModels::betOnRandom(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
 
   double totalSum = sum;
   int betCounter = 0;
   int randomTeamCounter = 0;
   const int maxNr = 3;
   const int minNr = 1;
-    
-  std::cout << std::endl << "Bet on random team every time" << std::endl;
-  std::cout << "Starting sum: " << sum << std::endl;
+  std::string returnString = "Bet on random team every time\n"; 
 
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
   
   std::random_device device;
   std::mt19937 generator(device());
@@ -172,15 +174,23 @@ void BettingModels::betOnRandom(double bettingSum, std::vector<std::vector<Event
 	}
 	break;	
       default:
-	std::cout << "Wrong random range, rand = " << new_number << std::endl;
+	return "Wrong random range";
+	//std::cout << "Wrong random range, rand = " << new_number << std::endl;
 	break;
       }
       betCounter++;
     }
   }
 
-  std::cout << "Random Victories: " << randomTeamCounter << "/" << betCounter << std::endl;
-  std::cout << "End sum: " << totalSum << std::endl;
+  oss.str("");
+  oss << "Random Victories: " << randomTeamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+
+  return returnString;
 }
 
 

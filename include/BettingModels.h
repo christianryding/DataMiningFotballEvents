@@ -8,6 +8,7 @@
 #define HEADERS_BETTINGMODELS_H_
 
 #include <vector>
+#include <string>
 #include "Event.h"
 
 class BettingModels{
@@ -24,10 +25,18 @@ class BettingModels{
   ~BettingModels();
 
   // bet on draw no matter what
-  void betDrawEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
-  void betHomeTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
-  void betAwayTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
-  void betOnRandom(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec);
+  void betDrawEveryTime(double bettingSum,
+			std::vector<std::vector<Event>> &allFotballEventsVec);
+
+  void betHomeTeamEveryTime(double bettingSum,
+			    std::vector<std::vector<Event>> &allFotballEventsVec);
+
+  void betAwayTeamEveryTime(double bettingSum,
+			    std::vector<std::vector<Event>> &allFotballEventsVec);
+
+  std::string betOnRandom(double bettingSum,
+		   std::vector<std::vector<Event>> &allFotballEventsVec);
+
 };
 
 #endif /* HEADERS_BETTINGMODELS_H_ */

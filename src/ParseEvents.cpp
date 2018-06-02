@@ -8,7 +8,6 @@
 #include <sstream>
 #include <algorithm>
 #include "ParseEvents.h"
-
 /**
  * Constructor
  */

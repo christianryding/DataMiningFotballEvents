@@ -8,6 +8,7 @@
 #include "ParseEvents.h"
 #include <future>
 #include <thread>
+#include <iostream>
 
 // functions
 std::vector<Event> startParsing(std::string filename);
@@ -40,7 +41,12 @@ int main(){
   bettingModels.betHomeTeamEveryTime(10, allFotballEventsVec);
   bettingModels.betDrawEveryTime(10, allFotballEventsVec);
   bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
-  bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
 }
 
 
