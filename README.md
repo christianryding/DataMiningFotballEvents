@@ -5,3 +5,4 @@ This is done with help of previous events dated from 2016 to mid 2018, the progr
 
 ## To do list
 * Implement more models
+* Run bettingmodels in threads
