@@ -43,6 +43,15 @@ int main(){
   std::cout << bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
   std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
 
+  std::cout << bettingModels.betHomeTeamBelowTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeTeamBelowThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeTeamBelowFourOdds(10, allFotballEventsVec);
+
+  std::cout << bettingModels.betDrawBelowTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawBelowThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawBelowFourOdds(10, allFotballEventsVec);
+  
+  std::cout << std::endl << "implement more models...." << std::endl;
 }
 
 

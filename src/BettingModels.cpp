@@ -217,3 +217,244 @@ std::string BettingModels::betOnRandom(double bettingSum, std::vector<std::vecto
 }
 
 
+
+
+// bets same amount every time on home team every single game with odds under 2 
+std::string BettingModels::betHomeTeamBelowTwoOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on home team every time if odds are below 2\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 2){
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() > allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Home Team victories: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
+
+
+// bets same amount every time on home team every single game with odds under 2 
+std::string BettingModels::betHomeTeamBelowThreeOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on home team every time if odds are below 3\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 3){
+	// if hometeam won, add winnings to sum
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() > allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	// if no win for hometeam, withdraw bettingsum from banksum
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Home Team victories: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
+
+
+// bets same amount every time on home team every single game with odds under 4
+std::string BettingModels::betHomeTeamBelowFourOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on home team every time if odds are below 4\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 4){
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() > allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Home Team victories: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
+
+
+// bets same amount every time on draw every single game with odds under 2
+std::string BettingModels::betDrawBelowTwoOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on draw every time if odds are below 2\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 2){
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() == allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Draws: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
+
+
+
+// bets same amount every time on draw every single game with odds under 3
+std::string BettingModels::betDrawBelowThreeOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on draw every time if odds are below 3\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 3){
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() == allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Draws: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
+
+
+
+
+
+
+// bets same amount every time on draw every single game with odds under 4
+std::string BettingModels::betDrawBelowFourOdds(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+
+  double totalSum = sum;
+  int betCounter = 0;
+  int teamCounter = 0;
+  std::string returnString = "\nBet on draw every time if odds are below 4\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
+  for( int i = 0; i < allFotballEventsVec.size(); i++){
+    for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
+      if(allFotballEventsVec.at(i).at(j).getHomeOdds() < 4){
+	if(allFotballEventsVec.at(i).at(j).getFinalScoreHome() == allFotballEventsVec.at(i).at(j).getFinalScoreAway()){  
+	  totalSum = totalSum + ( bettingSum * (allFotballEventsVec.at(i).at(j).getHomeOdds()-1) );
+	  teamCounter++;
+	}   
+	else{
+	  totalSum = totalSum - bettingSum;
+	}
+	betCounter++;
+      }
+    }
+  }
+
+  oss.str("");
+  oss << "Draws: " << teamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
+}
