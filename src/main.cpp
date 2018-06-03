@@ -38,9 +38,9 @@ int main(){
 
   // run the different models
   BettingModels bettingModels(10000);
-  bettingModels.betHomeTeamEveryTime(10, allFotballEventsVec);
-  bettingModels.betDrawEveryTime(10, allFotballEventsVec);
-  bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeTeamEveryTime(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawEveryTime(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
   std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
 
 }

@@ -1,4 +1,3 @@
-
 /*
  * BettingModels.cpp
  *
@@ -30,14 +29,16 @@ BettingModels::~BettingModels(){
 
 
 // bets same amount every time on draw every single game
-void BettingModels::betDrawEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+std::string BettingModels::betDrawEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
 
   double totalSum = sum;
   int betCounter = 0;
   int drawCounter = 0;
-  
-  std::cout << std::endl << "Bet on draw every time" << std::endl;
-  std::cout << "Starting sum: " << sum << std::endl;
+  std::string returnString = "\nBet on draw every time\n"; 
+
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
   
   for( int i = 0; i < allFotballEventsVec.size(); i++){
     for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
@@ -54,22 +55,31 @@ void BettingModels::betDrawEveryTime(double bettingSum, std::vector<std::vector<
       betCounter++; 
     }
   }
-  
-  std::cout << "Draw matches: " << drawCounter << "/" << betCounter << std::endl;
-  std::cout << "End sum: " << totalSum << std::endl;
+
+  oss.str("");
+  oss << "Draw matches: " << drawCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+
+  return returnString;
 }
 
 
 // bets same amount every time on home team every single game
-void BettingModels::betHomeTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+std::string BettingModels::betHomeTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
 
   double totalSum = sum;
   int betCounter = 0;
   int homeTeamCounter = 0;
+  std::string returnString = "\nBet on home team every time\n"; 
 
-  std::cout << std::endl << "\nBet on home team every time" << std::endl;
-  std::cout << "Starting sum: " << sum << std::endl;
-  
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
+  returnString += oss.str();
+    
   for( int i = 0; i < allFotballEventsVec.size(); i++){
     for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
 
@@ -86,21 +96,28 @@ void BettingModels::betHomeTeamEveryTime(double bettingSum, std::vector<std::vec
     }
   }
 
-  std::cout << "Hometeam Victories: " << homeTeamCounter << "/" << betCounter << std::endl;
-  std::cout << "End sum: " << totalSum << std::endl;
+  oss.str("");
+  oss << "Home Team victories: " << homeTeamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+  
+  return returnString;
 }
 
 
 // bets same amount every time on away team every single game
-void BettingModels::betAwayTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
+std::string BettingModels::betAwayTeamEveryTime(double bettingSum, std::vector<std::vector<Event>> &allFotballEventsVec){
 
   double totalSum = sum;
   int betCounter = 0;
   int awayTeamCounter = 0;
+  std::string returnString = "\nBet on away team every time\n"; 
+  std::ostringstream oss;
+  oss << "Starting sum: " << sum << std::endl;
 
-  std::cout << std::endl << "Bet on away team every time" << std::endl;
-  std::cout << "Starting sum: " << sum << std::endl;
-  
   for( int i = 0; i < allFotballEventsVec.size(); i++){
     for( int j = 0; j < allFotballEventsVec.at(i).size(); j++){
 
@@ -117,8 +134,15 @@ void BettingModels::betAwayTeamEveryTime(double bettingSum, std::vector<std::vec
     }
   }
 
-  std::cout << "Hometeam Victories: " << awayTeamCounter << "/" << betCounter << std::endl;
-  std::cout << "End sum: " << totalSum << std::endl;
+  oss.str("");
+  oss << "Away Victories: " << awayTeamCounter << "/" << betCounter << std::endl;
+  returnString += oss.str();
+
+  oss.str("");
+  oss <<  "End sum: " << totalSum << std::endl;
+  returnString += oss.str();
+
+  return returnString;
 }
 
 // bet on random team every time
@@ -129,7 +153,7 @@ std::string BettingModels::betOnRandom(double bettingSum, std::vector<std::vecto
   int randomTeamCounter = 0;
   const int maxNr = 3;
   const int minNr = 1;
-  std::string returnString = "Bet on random team every time\n"; 
+  std::string returnString = "\nBet on random team every time\n"; 
 
   std::ostringstream oss;
   oss << "Starting sum: " << sum << std::endl;
@@ -175,7 +199,6 @@ std::string BettingModels::betOnRandom(double bettingSum, std::vector<std::vecto
 	break;	
       default:
 	return "Wrong random range";
-	//std::cout << "Wrong random range, rand = " << new_number << std::endl;
 	break;
       }
       betCounter++;

@@ -25,13 +25,13 @@ class BettingModels{
   ~BettingModels();
 
   // bet on draw no matter what
-  void betDrawEveryTime(double bettingSum,
+  std::string betDrawEveryTime(double bettingSum,
 			std::vector<std::vector<Event>> &allFotballEventsVec);
 
-  void betHomeTeamEveryTime(double bettingSum,
+  std::string betHomeTeamEveryTime(double bettingSum,
 			    std::vector<std::vector<Event>> &allFotballEventsVec);
 
-  void betAwayTeamEveryTime(double bettingSum,
+  std::string betAwayTeamEveryTime(double bettingSum,
 			    std::vector<std::vector<Event>> &allFotballEventsVec);
 
   std::string betOnRandom(double bettingSum,
