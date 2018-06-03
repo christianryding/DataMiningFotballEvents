@@ -42,11 +42,7 @@ int main(){
   bettingModels.betDrawEveryTime(10, allFotballEventsVec);
   bettingModels.betAwayTeamEveryTime(10, allFotballEventsVec);
   std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
-  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
-  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
-  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
-  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
-  std::cout << bettingModels.betOnRandom(10, allFotballEventsVec);
+
 }
 
 
