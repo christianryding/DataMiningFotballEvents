@@ -24,18 +24,15 @@ class BettingModels{
   // destructor
   ~BettingModels();
 
-  // bet on draw no matter what
   std::string betDrawEveryTime(double bettingSum,
 			       std::vector<std::vector<Event>> &allFotballEventsVec);
-
   std::string betHomeTeamEveryTime(double bettingSum,
 				   std::vector<std::vector<Event>> &allFotballEventsVec);
-
   std::string betAwayTeamEveryTime(double bettingSum,
 				   std::vector<std::vector<Event>> &allFotballEventsVec);
-  
   std::string betOnRandom(double bettingSum,
 			  std::vector<std::vector<Event>> &allFotballEventsVec);
+
   
   std::string betHomeTeamBelowTwoOdds(double bettingSum,
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
@@ -43,14 +40,51 @@ class BettingModels{
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
   std::string betHomeTeamBelowFourOdds(double bettingSum,
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
-
-
-
   std::string betDrawBelowTwoOdds(double bettingSum,
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
   std::string betDrawBelowThreeOdds(double bettingSum,
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
   std::string betDrawBelowFourOdds(double bettingSum,
+				      std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamBelowTwoOdds(double bettingSum,
+				      std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamBelowThreeOdds(double bettingSum,
+					std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamBelowFourOdds(double bettingSum,
+				       std::vector<std::vector<Event>> &allFotballEventsVec);
+  
+  
+  std::string betHomeTeamAboveTwoOdds(double bettingSum,
+				      std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betHomeTeamAboveThreeOdds(double bettingSum,
+					std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betHomeTeamAboveFourOdds(double bettingSum,
+				       std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betDrawAboveTwoOdds(double bettingSum,
+				  std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betDrawAboveThreeOdds(double bettingSum,
+				    std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betDrawAboveFourOdds(double bettingSum,
+				   std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamAboveTwoOdds(double bettingSum,
+				  std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamAboveThreeOdds(double bettingSum,
+				    std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayTeamAboveFourOdds(double bettingSum,
+				   std::vector<std::vector<Event>> &allFotballEventsVec);
+
+  
+  std::string betHomeBetweenTwoThree(double bettingSum,
+				  std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betHomeBetweenThreeFour(double bettingSum,
+				   std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betDrawBetweenTwoThree(double bettingSum,
+				     std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betDrawBetweenThreeFour(double bettingSum,
+				      std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayBetweenTwoThree(double bettingSum,
+				     std::vector<std::vector<Event>> &allFotballEventsVec);
+  std::string betAwayBetweenThreeFour(double bettingSum,
 				      std::vector<std::vector<Event>> &allFotballEventsVec);
 
 };

@@ -46,12 +46,30 @@ int main(){
   std::cout << bettingModels.betHomeTeamBelowTwoOdds(10, allFotballEventsVec);
   std::cout << bettingModels.betHomeTeamBelowThreeOdds(10, allFotballEventsVec);
   std::cout << bettingModels.betHomeTeamBelowFourOdds(10, allFotballEventsVec);
-
   std::cout << bettingModels.betDrawBelowTwoOdds(10, allFotballEventsVec);
   std::cout << bettingModels.betDrawBelowThreeOdds(10, allFotballEventsVec);
   std::cout << bettingModels.betDrawBelowFourOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamBelowTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamBelowThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamBelowFourOdds(10, allFotballEventsVec);
   
-  std::cout << std::endl << "implement more models...." << std::endl;
+  std::cout << bettingModels.betHomeTeamAboveTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeTeamAboveThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeTeamAboveFourOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawAboveTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawAboveThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawAboveFourOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamAboveTwoOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamAboveThreeOdds(10, allFotballEventsVec);
+  std::cout << bettingModels.betAwayTeamAboveFourOdds(10, allFotballEventsVec);
+
+  std::cout << bettingModels.betHomeBetweenTwoThree(10, allFotballEventsVec);
+  std::cout << bettingModels.betHomeBetweenThreeFour(10, allFotballEventsVec);
+  std::cout << bettingModels.betDrawBetweenTwoThree(10,allFotballEventsVec);
+  std::cout << bettingModels.betDrawBetweenThreeFour(10,allFotballEventsVec);
+  std::cout << bettingModels.betAwayBetweenTwoThree(10,allFotballEventsVec);
+  std::cout << bettingModels.betAwayBetweenThreeFour(10,allFotballEventsVec);
+
 }
 
 
